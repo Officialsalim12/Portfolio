@@ -49,17 +49,19 @@ export const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link, i) => (
-            <motion.a
+            <motion.div
               key={link.name}
-              as={Link}
-              href={link.href}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-slate-600 hover:text-primary transition-colors font-medium lg:text-lg 2xl:text-xl cursor-pointer"
             >
-              {link.name}
-            </motion.a>
+              <Link
+                href={link.href}
+                className="text-slate-600 hover:text-primary transition-colors font-medium lg:text-lg 2xl:text-xl cursor-pointer"
+              >
+                {link.name}
+              </Link>
+            </motion.div>
           ))}
         </div>
 
